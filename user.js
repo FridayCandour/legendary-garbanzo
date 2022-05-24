@@ -48,9 +48,6 @@ const scraperObject = async (browser, url) => {
 				}
 			})
 
-
-			// handle push here
-
 			for (const i in user) {
 				console.log( i, user[i])
 			}
@@ -66,10 +63,7 @@ const scraperObject = async (browser, url) => {
 			})
 			.then(function(res){ console.log(res) })
 			.catch(function(res){ console.log(res) })
-
-// await fetch("https://wazirnft.herokuapp.com/users")
 	  });
-
 }
 
 module.exports = scraperObject;

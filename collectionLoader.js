@@ -1,6 +1,3 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
-
 async function nftLoader (page) {
 
 	await page.evaluate(() => {
@@ -77,7 +74,6 @@ async function nftLoader (page) {
 			  .then(function(res){ console.log(res) })
 			  .catch(function(res){ console.log(res) })
 	  });
-// await page.close()
 };
 
 module.exports = nftLoader

@@ -12,7 +12,7 @@ const scraperObject = async (browser, url) => {
 
   async function scrollToBottom() {
 	await new Promise(resolve => {
-	  const distance = 100; // should be less than or equal to window.innerHeight
+	  const distance = 100;
 	  const delay = 100;
 	  const timer = setInterval(() => {
 		document.scrollingElement.scrollBy(0, distance);
@@ -33,10 +33,10 @@ const scraperObject = async (browser, url) => {
 	await nftPage.waitForFunction(() => document.readyState === "complete");
 	await nftPage.evaluate(scrollToBottom);
     await nftPage.waitForSelector(".short-text")
-    await nftLoader(nftPage, {"isCollected": false, "isCreated": true,})
-    await page.close()
-    return
+    await nftLoader(nftPage)
+    await nftPage.close()
     });
+	await page.close()
 }
 
 module.exports = scraperObject;

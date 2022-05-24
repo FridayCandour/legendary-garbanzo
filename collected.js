@@ -1,4 +1,4 @@
-const nftLoader = require("./nft.js")
+const nftLoader = require("./cnft.js")
 
 const scraperObject = async (browser, url) => {
 	let page = await browser.newPage();
@@ -33,10 +33,10 @@ const scraperObject = async (browser, url) => {
 	await nftPage.waitForFunction(() => document.readyState === "complete");
 	await nftPage.evaluate(scrollToBottom);
     await nftPage.waitForSelector(".short-text")
-    await nftLoader(nftPage, {"isCollected": true, "isCreated": false,})
-    await page.close()
-    return
+    await nftLoader(nftPage)
+	await nftPage.close()
     });
+	await page.close()
 }
 
 module.exports = scraperObject;
