@@ -58,13 +58,13 @@ async function nftLoader (page) {
 	 } 
 
 document.querySelectorAll(".token-list-item").forEach(el => {
-const img =		el.firstChild.firstChild && el.firstChild.firstChild.src
+const img =		el.children[0].children[0] && el.children[0].children[0].src
 const price  =  el.children[1].children[0] && el.children[1].children[0].innerText.split(" ")[0] * 1
-const name = el.firstChild.children[1].children[0].children[0].children[0] && el.firstChild.children[1].children[0].children[0].children[0].innerText
-const transferred = el.firstChild.children[1].children[0].children[0] && el.firstChild.children[1].children[0].children[0].innerText.includes("ran")
-const minted = el.firstChild.children[1].children[0].children[0] && el.firstChild.children[1].children[0].children[0].innerText.includes("int")
-const listed = el.firstChild.children[1].children[0].children[0] && el.firstChild.children[1].children[0].children[0].innerText.includes("is")
-const date = el.firstChild.children[1].children[1] && el.firstChild.children[1].children[1].innerText
+const name = el.children[0].children[1].children[0].children[0].children[0] && el.children[0].children[1].children[0].children[0].children[0].innerText
+const transferred = el.children[0].children[1].children[0].children[0] && el.children[0].children[1].children[0].children[0].innerText.includes("ran")
+const minted = el.children[0].children[1].children[0].children[0] && el.children[0].children[1].children[0].children[0].innerText.includes("int")
+const listed = el.children[0].children[1].children[0].children[0] && el.children[0].children[1].children[0].children[0].innerText.includes("is")
+const date = el.children[0].children[1].children[1] && el.children[0].children[1].children[1].innerText
  
 
 if (minted) {

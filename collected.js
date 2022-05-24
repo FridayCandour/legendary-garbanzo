@@ -32,6 +32,7 @@ const scraperObject = async (browser, url) => {
 		let   nftPage = await browser.newPage();
 		await nftPage.goto(nft);
 		await nftPage.waitForFunction(() => document.readyState === "complete");
+     	await page.waitForTimeout(3000);
 		await nftPage.evaluate(scrollToBottom);
 		await nftPage.waitForSelector(".short-text")
 		await nftLoader(nftPage)

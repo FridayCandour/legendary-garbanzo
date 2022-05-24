@@ -10,7 +10,7 @@ async function startBrowser(){
 			"--disable-setuid-sandbox",  
 			'--no-sandbox',
 			'--disable-dev-shm-usage',
-			'--single-process'
+//			'--single-process'
 		],
 	        'ignoreHTTPSErrors': true
 	    });
