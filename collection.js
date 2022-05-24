@@ -10,8 +10,8 @@ const scraperObject = async (browser, url) => {
 	let links = elements.map(async (el)=> await page.evaluate(el => el.href, el))
     links.forEach( async (nft) => {
      let nftPage = await browser.newPage();
-	 await nftPage.goto( await nft);
-	 await nftPage.waitForSelector(".kExCTt")
+	 await nftPage.goto( await nft);	
+	 await page.waitForTimeout(3000);
 	 await nftPage.waitForFunction(() => document.readyState === "complete");
      await collectionLoader(nftPage);
 	 return

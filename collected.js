@@ -27,15 +27,16 @@ const scraperObject = async (browser, url) => {
 	let elements = await page.$$('.token-card--link')
 	let links = elements.map(async (el)=> await page.evaluate(el => el.href, el))
 	//
-	links.forEach( async (nft) => {
-	let   nftPage = await browser.newPage();
-	await nftPage.goto(await nft);
-	await nftPage.waitForFunction(() => document.readyState === "complete");
-	await nftPage.evaluate(scrollToBottom);
-    await nftPage.waitForSelector(".short-text")
-    await nftLoader(nftPage)
-	await nftPage.close()
-    });
+	for (let i = 0; i < links.length; i++) {
+		const nft = await links[i];
+		let   nftPage = await browser.newPage();
+		await nftPage.goto(nft);
+		await nftPage.waitForFunction(() => document.readyState === "complete");
+		await nftPage.evaluate(scrollToBottom);
+		await nftPage.waitForSelector(".short-text")
+		await nftLoader(nftPage)
+		await nftPage.close()
+	}
 	await page.close()
 }
 
