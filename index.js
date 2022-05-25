@@ -1,8 +1,5 @@
-const userLink = 'https://nft.wazirx.org/NACalligraphy'
-// const userLink = 'https://nft.wazirx.org/winsomepriyanka'
-// https://nft.wazirx.org/bhawnasehgal
-// const userLink = 'https://nft.wazirx.org/CryptoSauga'
-
+const userLink = 'https://nft.wazirx.org/dakshkalra'
+// 
 async function scrape() {
 const browserObject = require('./browser.js');
 const scraperController = require('./pageController.js');

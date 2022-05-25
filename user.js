@@ -38,6 +38,9 @@ const scraperObject = async (browser, url) => {
 			user.instagram =     document.querySelector('.sc-liAPKD').children[0]     && document.querySelector('.sc-liAPKD').children[0]                .href
 			user.twitter =       document.querySelector('.sc-liAPKD') .children[1]    && document.querySelector('.sc-liAPKD').children[1]                   .href
 			user.followers =     document.querySelectorAll('.hBkTwE')[1]  && document.querySelectorAll('.hBkTwE')[1]               .textContent.trim()
+			if (user.followers.includes("K")) {
+				user.followers = user.followers.split("K")[0] + "000"
+			}
 			user.following =     document.querySelectorAll('.hBkTwE')[2]  && document.querySelectorAll('.hBkTwE')[2]           .textContent.trim()
 			user.isVerified = document.querySelector(".bi-patch-check-fill") ? true : false
 			document.querySelectorAll(".dfRghT").forEach((li)=>{
@@ -63,8 +66,8 @@ const scraperObject = async (browser, url) => {
 				body: JSON.stringify(user)
 			})
 			.then(response => response.json())
-			.then(data => console.log(data))
-			.catch(function(res){ console.log(res.message) })
+			.then(data => console.log(data.message))
+			.catch(function(res){ console.log(res) })
 	  });
 	//   await page.close()
 }

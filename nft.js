@@ -49,12 +49,13 @@ async function nftLoader (page) {
 	  nft.description = document.querySelector(".short-text").innerText && document.querySelector(".short-text").innerText
 	  nft.creator_image = document.querySelectorAll(".avatar__img")[0] && document.querySelectorAll(".avatar__img")[0].src
 	  nft.owner_image = document.querySelectorAll(".avatar__img")[1] && document.querySelectorAll(".avatar__img")[1].src
-	  nft.isBid = document.querySelector(".dXXEDb span") && !document.querySelector(".dXXEDb span").innerText.includes("uy")
+	  nft.isBid = document.querySelector(".cdtNHw span") && document.querySelector(".cdtNHw span").innerText.includes("bid")
 	  nft.ipfs = "https://ipfs.io"
 	  const p = window.location.href
 	  nft.bsScan = ("https://bscscan.com/token/" + p.split("/")[4] + "?a=" + p.split("/")[5]);
 	  if (document.querySelector(".bid-token__asset-wrapper--asset-fit")) {
 		 nft.isImage = document.querySelector(".bid-token__asset-wrapper--asset-fit").tagName = "IMG" ? true : false;
+		 nft.isImage =  document.querySelector(".asset-video-wrapper")   ? false : true
 	 } 
 
 document.querySelectorAll(".token-list-item").forEach(el => {
@@ -94,8 +95,8 @@ if (transferred) {
 		  body: JSON.stringify(nft)
 	  })
 	  .then(response => response.json())
-	  .then(data => console.log(data))
-	  .catch(function(res){ console.log(res.message) })
+	  .then(data => console.log(data.message))
+	  .catch(function(res){ console.log(res.message.collection.message) })
 	  });
 };
 

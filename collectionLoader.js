@@ -72,7 +72,7 @@ async function nftLoader (page) {
 				  body: JSON.stringify(collection)
 			  })
 			  .then(response => response.json())
-			  .then(data => console.log(data))
+			  .then(data => console.log(data.message))
 			  .catch(function(res){ console.log(res.message) })
 	  });
 };

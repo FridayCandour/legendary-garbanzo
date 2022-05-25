@@ -25,6 +25,7 @@ const scraperObject = async (browser, url) => {
 	});
   }
 
+    await page.waitForFunction(() => document.readyState === "complete");
 	let elements = await page.$$('.token-card--link')
 	let links = elements.map(async (el)=> await page.evaluate(el => el.href, el))
 	//
