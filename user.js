@@ -67,7 +67,7 @@ const scraperObject = async (browser, url) => {
 			})
 			.then(response => response.json())
 			.then(data => console.log(data.message))
-			.catch(function(res){ console.log(res) })
+			.catch(function (err){ console.log(err) })
 	  });
 	//   await page.close()
 }

@@ -1,4 +1,4 @@
-const userLink = 'https://nft.wazirx.org/dakshkalra'
+const userLink = 'https://nft.wazirx.org/varundo'
 // 
 async function scrape() {
 const browserObject = require('./browser.js');

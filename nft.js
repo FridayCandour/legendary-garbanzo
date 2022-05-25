@@ -9,7 +9,7 @@ async function nftLoader (page) {
 			"isImage": false,
 			"price_in_USD": "",
 			"price_in_BNB": "",
-			"collection_id": "",
+			"collection_name": "",
 			"nft_name":"",
 			"owner": "",
 			"owner_image":"",
@@ -39,7 +39,8 @@ async function nftLoader (page) {
 				   "username": name
 				}
 			}
-      nft.collection_id = document.querySelector(".bid-token__details--title-2") && document.querySelector(".bid-token__details--title-2").innerText;
+			
+      nft.collection_name = document.querySelector(".bid-token__details--title-2") && document.querySelector(".bid-token__details--title-2").innerText;
       nft.name =  document.querySelector(".bid-token__details--title") && document.querySelector(".bid-token__details--title").innerText;
 	  nft.nft_name =  document.querySelector(".bid-token__details--title") && document.querySelector(".bid-token__details--title").innerText;
 	  nft.price_in_BNB = document.querySelector(".koAsrp") && document.querySelector(".koAsrp").innerText.split(" ")[0] * 1
@@ -96,7 +97,7 @@ if (transferred) {
 	  })
 	  .then(response => response.json())
 	  .then(data => console.log(data.message))
-	  .catch(function(res){ console.log(res.message.collection.message) })
+	  .catch(function(res){ console.log(res.message) })
 	  });
 };
 
