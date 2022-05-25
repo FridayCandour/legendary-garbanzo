@@ -37,13 +37,9 @@ const scraperObject = async (browser, url) => {
 		await nftPage.evaluate(scrollToBottom);
 		await nftPage.waitForSelector(".short-text")
 		await nftLoader(nftPage)
-		// if (i = (links.length - 1)) {
-		// 	await nftPage.close()
-		// 		await page.close()
-		// 	}	else {
-		// 	await nftPage.close()
-		// 	}
+		// await nftPage.close()
 	}
+	// await page.close()
 }
 
 module.exports = scraperObject;

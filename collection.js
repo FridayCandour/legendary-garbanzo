@@ -31,13 +31,9 @@ const scraperObject = async (browser, url) => {
 		await page.waitForTimeout(3000);
 		await nftPage.waitForFunction(() => document.readyState === "complete");
 		await collectionLoader(nftPage);
-		// if (i = (links.length - 1)) {
 		// await nftPage.close()
-		// 	await page.close()
-		// }	else {
-		// await nftPage.close()
-		// }
 	}
+	// await page.close()
 }
 
 module.exports = scraperObject;

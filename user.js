@@ -66,7 +66,7 @@ const scraperObject = async (browser, url) => {
 			.then(data => console.log(data))
 			.catch(function(res){ console.log(res.message) })
 	  });
-	  await page.close()
+	//   await page.close()
 }
 
 module.exports = scraperObject;

@@ -1,4 +1,4 @@
-const userLink = 'https://nft.wazirx.org/CryptBuddha'
+const userLink = 'https://nft.wazirx.org/NACalligraphy'
 // const userLink = 'https://nft.wazirx.org/winsomepriyanka'
 // https://nft.wazirx.org/bhawnasehgal
 // const userLink = 'https://nft.wazirx.org/CryptoSauga'
