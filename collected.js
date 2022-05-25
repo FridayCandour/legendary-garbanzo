@@ -2,6 +2,7 @@ const nftLoader = require("./cnft.js")
 
 const scraperObject = async (browser, url) => {
 	let page = await browser.newPage();
+	await page.setDefaultNavigationTimeout(0); 
 	console.log(`Navigating to ${url}...`);
 	await page.goto(url);
 	// Wait for the required DOM to be rendered
@@ -36,9 +37,13 @@ const scraperObject = async (browser, url) => {
 		await nftPage.evaluate(scrollToBottom);
 		await nftPage.waitForSelector(".short-text")
 		await nftLoader(nftPage)
-		await nftPage.close()
+		// if (i = (links.length - 1)) {
+		// 	await nftPage.close()
+		// 		await page.close()
+		// 	}	else {
+		// 	await nftPage.close()
+		// 	}
 	}
-	await page.close()
 }
 
 module.exports = scraperObject;

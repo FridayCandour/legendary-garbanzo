@@ -1,5 +1,6 @@
 const scraperObject = async (browser, url) => {
 	let page = await browser.newPage();
+	await page.setDefaultNavigationTimeout(0); 
 	console.log(`Navigating to ${url}...`);
 	await page.goto(url);
 
@@ -61,9 +62,11 @@ const scraperObject = async (browser, url) => {
 				method: "POST",
 				body: JSON.stringify(user)
 			})
-			.then(function(res){ console.log(res) })
-			.catch(function(res){ console.log(res) })
+			.then(response => response.json())
+			.then(data => console.log(data))
+			.catch(function(res){ console.log(res.message) })
 	  });
+	  await page.close()
 }
 
 module.exports = scraperObject;
